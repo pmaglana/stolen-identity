@@ -1,3 +1,67 @@
+# THE STOLEN IDENTITY
+
+## Overview
+An employee got phished through a convincing fake login page, resulting in their password being compromised and MFA was successfully completed, the employee remained the Owner of an enterprise app. Our objective is to identify, investigate, and recover evidence related to the incident.
+
+## Objective
+To reconstruct the attacker’s actions step by step using only the access and information available in Azure. The investigation will trace the evidence left behind on the app registration identified by the security team as having been compromised.
+
+## Scenario
+Reconstructed a five-stage OAuth consent-phishing kill chain in a live Azure tenant through forensic analysis of two linked app registrations.
+
+## Environment
+Live multi-user Azure training tenant, Reader access.
+
+## Investigation
+
+### Stage 1: ENTRY - Initial access - Phished employee identity </br>
+A user was phished, completed MFA, and had the resulting session token stolen. That token carried an MFA-satisfied claim, so it sailed past Conditional Access. That user was also, through years of drift, still an Owner on a legacy connector app. </br>
+
+Location: The legacy app's Branding & properties</br>
+Class of Finding: Internal notes value</br>
+
+   </br><img width="895" height="508" alt="1-entry2" src="https://github.com/user-attachments/assets/e46b1f83-555c-4735-a729-ae37e2a5d55d" /></br>
+
+## 6. Evidence & Findings
+Document what you found at each stage.
+
+| Stage | Evidence | Security Impact |
+|------|----------|-----------------|
+| Entry |  | Initial access |
+| Escalate | New client secret | Privilege escalation |
+| Pivot | Rogue application/service principal | Expanded access |
+| Persist | Custom API scope | Persistence |
+| Loot | Malicious redirect URI | Token harvesting |
+
+
+
+   
+
+## 7. Attack Chain / Kill Chain
+Show how the five stages connected together.
+
+## 8. Security Analysis
+Explain WHY each configuration was dangerous and what an attacker could accomplish.
+
+## 9. Mitigations / Recommendations
+Explain how the organization could prevent or reduce the attack.
+
+## 10. Challenges & Troubleshooting
+Document problems you encountered and how you solved them.
+
+## 11. Lessons Learned
+What cybersecurity concepts did you gain from the lab?
+
+## 12. Conclusion
+Summarize the investigation and its security implications.
+
+## 13. References
+List Microsoft documentation, course material, CyberChef, etc.
+
+
+
+
+<!---
 # The Stolen Identity
 ## Scenario
 
@@ -10,7 +74,8 @@ Live multi-user Azure training tenant, Reader Access.
 ## Investigation
 
 1. ENTRY. </br>
-A user was phished, completed MFA, and had the resulting session token stolen. That token carried an MFA-satisfied claim, so it sailed past Conditional Access. That user was also, through years of drift, still an Owner on a legacy connector app.
+A user was phished, completed MFA, and had the resulting session token stolen. That token carried an MFA-satisfied claim, so it sailed past Conditional Access. That user was also, through years of drift, still an Owner on a legacy connector app. </br>
+Locate the legacy App: Home > App registration > All applications Tab > 
 
    <img width="725" height="593" alt="1-entry1" src="https://github.com/user-attachments/assets/2b3ee0e0-1d8a-430e-9094-b72a51a0b61f" />
    <img width="895" height="508" alt="1-entry2" src="https://github.com/user-attachments/assets/e46b1f83-555c-4735-a729-ae37e2a5d55d" /></br>
@@ -19,7 +84,7 @@ A user was phished, completed MFA, and had the resulting session token stolen. T
 2. ESCALATE.</br>
 Using those Owner rights, the attacker minted a new client secret on the legacy app. That secret let them authenticate through the client credentials flow as the service principal itself, inheriting the app's directory permissions without ever signing in as a human again. Note the expiry date: set nearly a century out.
 
-   <img width="778" height="642" alt="2-escalate" src="https://github.com/user-attachments/assets/e21b30f3-d01e-4dbe-95f3-e3fb4a06127f" /></br>
+   <img width="778" height="642" alt="2-escalate" src="https://github.com/user-attachments/assets/6e3f7eae-a30d-4edb-af64-a61518b99c69" /></br>
 
 3. PIVOT.</br>
 A single secret dies when it gets rotated. So the attacker registered their own app (every standard user can do this by default in Entra) and added its service principal to the legacy app's Owners list. Now they can re-credential the legacy app forever, even after the first secret is caught.
