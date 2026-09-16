@@ -78,4 +78,4 @@ Based on the findings identified during the investigation, the following remedia
 
 ## What I learned
 
-The primary takeaway from this investigation is that application registrations and service principals should be treated as security sensitive resources. Monitoring directory roles alone is not sufficient; application ownership, credentials, permissions, and authorization grants must also be regularly reviewed as part of an organization's identity security strategy.
+My key takeaway from this investigation is that applications should be treated as security sensitive resources. Monitoring roles alone is not sufficient; application ownership, credentials, permissions, and authorization grants must also be regularly reviewed as part of an organization's security strategy.
