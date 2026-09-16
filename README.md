@@ -1,4 +1,4 @@
-# THE STOLEN IDENTITY
+<img width="1976" height="510" alt="banner-stolenidentity2" src="https://github.com/user-attachments/assets/ba04b2b4-1764-4069-b522-2c973954060c" />
 
 <!---## Overview
 An employee got phished through a convincing fake login page, resulting in their password being compromised and MFA was successfully completed, the employee remained the Owner of an enterprise app. Our objective is to identify, investigate, and recover evidence related to the incident.
