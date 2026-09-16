@@ -33,8 +33,11 @@ Class of Finding: A Secret that's dated nearly a century out. </br>
 #### </br>Objective 3: PIVOT</br>
 A single secret dies when it gets rotated. So the attacker registered their own app (every standard user can do this by default in Entra) and added its service principal to the legacy app's Owners list. Now they can re-credential the legacy app forever, even after the first secret is caught.</br>
 
-   <img width="917" height="798" alt="3-pivot2" src="https://github.com/user-attachments/assets/3c5f62a8-2acf-4d5f-a590-3fd73c967969" />
-   <img width="727" height="626" alt="3-pivot1" src="https://github.com/user-attachments/assets/ef1984b6-80f3-49ec-9f14-98cebec26a93" /></br>
+Location: Rogue app's Branding & properties</br>
+Class of Finding: Internal notes value</br>
+
+   <img width="727" height="626" alt="3-pivot1" src="https://github.com/user-attachments/assets/ef1984b6-80f3-49ec-9f14-98cebec26a93" />
+   <img width="917" height="798" alt="3-pivot2" src="https://github.com/user-attachments/assets/3c5f62a8-2acf-4d5f-a590-3fd73c967969" /></br>
 
 #### </br>Objective 4: PERSIST</br>
 Then the backup plan: a custom scope published on the legacy app's Expose an API blade. This turns the legacy app into a callable backend resource, which means the attacker's own app can request delegated access to it.</br>
