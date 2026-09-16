@@ -2,7 +2,7 @@
 
 <!--- --->
 ## Overview  
-An employee got phished through a convincing fake login page, resulting in their password being compromised and MFA was successfully completed, the employee remained the Owner of an enterprise app. Our objective is to identify, investigate, and recover evidence related to the incident.
+An employee got phished through a convincing fake login page, resulting in their password being compromised and MFA was successfully completed, the employee remained the Owner of an enterprise app. The objective is to identify, investigate, and recover evidence related to the incident.
 
 ## Objective
 To reconstruct the attacker’s actions step by step using only the access and information available in Azure. The investigation will trace the evidence left behind on the app registration identified by the security team as having been compromised.  
@@ -55,21 +55,27 @@ Location: Rogue app's Redirect URIs</br>
 Class of Finding: Suspicious Redirect URI </br>
 
    <img width="1407" height="653" alt="5-loot" src="https://github.com/user-attachments/assets/ad423a3a-becb-4cc4-9c25-8ee91faa61f2" /></br>
-
+   
+This incident is an example of a confused deputy attack because the attacker abused a legitimate, trusted application to access resources using permissions that had already been granted to that application. Rather than directly gaining those privileges, the attacker manipulated the application's existing trust, credentials, and permissions to act on their behalf. This demonstrates how a compromised application can become an intermediary that performs actions the attacker would not normally be authorized to perform.</br>
 
 ## What broke / what surprised me
-<!---
-The most credible section in the document. Dead ends, wrong guesses, the thing that took an hour. Employers know real work is messy. This section separates you from certificate collectors.
---->
+
+Any standard user can register an app by default, and that owning an app registration is effectively an unlogged privilege path that a review of Global Admins would completely miss.</br>
 
 ## Findings and recommendations
-<!---
-What you determined, plus 2 or 3 recommendations as if you were reporting to the resource owner.
---->
 
+Based on the findings identified during the investigation, the following remediation actions are recommended to contain the compromised application and reduce the risk of continued unauthorized access:</br>
+
+   1. Revoke the compromised client secret</br>
+   2. Remove the rogue service principal from Owners</br>
+   3. Delete the custom exposed API scope</br>
+   4. Revoke the OAuth2PermissionGrant explicitly, because containment does not remove it</br>
+   5. Remove the attacker redirect URI</br>
+   6. Review and reduce the Graph application permissions</br>
+   7. Disable default user app registration</br>
+   8. Audit every app registration's Owners list the same way you audit directory role membership</br>
+   9. Alert on new client secrets and new redirect URIs</br>
 
 ## What I learned
-<!---
-3 to 5 bullets. At least one technical, one "what I'd do differently."
---->
 
+The primary takeaway from this investigation is that application registrations and service principals should be treated as security sensitive resources. Monitoring directory roles alone is not sufficient; application ownership, credentials, permissions, and authorization grants must also be regularly reviewed as part of an organization's identity security strategy.
