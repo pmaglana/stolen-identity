@@ -60,7 +60,7 @@ This incident is an example of a confused deputy attack because the attacker abu
 
 ## What broke / what surprised me
 
-// finalizing. gets reshipped at the end of the day.
+// finalizing. gets reshipped later today.
 <!---Any standard user can register an app by default, and that owning an app registration is effectively an unlogged privilege path that a review of Global Admins would completely miss.</br> --->
 
 ## Findings and recommendations
@@ -79,6 +79,6 @@ Based on the findings identified during the investigation, the following remedia
 
 ## What I learned
 
-// editing. gets reshipped at the end of the day.
+// editing. gets reshipped later today.
 <!---
 My key takeaway from this investigation is that applications should be treated as security sensitive resources. Monitoring roles alone is not sufficient; application ownership, credentials, permissions, and authorization grants must also be regularly reviewed as part of an organization's security strategy.
