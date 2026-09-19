@@ -53,7 +53,7 @@ This incident is an example of a confused deputy attack because the attacker abu
 
 ## What broke / what surprised me
 
-The strategy/process of using a stolen account and creating a new app, give it control over a more important app is surprising enough, the best part is the attacker didn't even need to do/hack anything complicated.
+The strategy/process of using a stolen account and creating a new app, give it control over a more important app is surprising enough, the best part is the attacker didn't even need to do/hack anything complicated. They just abused legitimate Azure features and permissions.
 
 ## Findings and recommendations
 
