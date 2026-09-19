@@ -1,3 +1,4 @@
+<a id="top"></a>
 <img width="1976" height="510" alt="banner-stolenidentity2" src="https://github.com/user-attachments/assets/ba04b2b4-1764-4069-b522-2c973954060c" />
 
 ## Scenario
@@ -72,3 +73,8 @@ Based on the findings identified during the investigation, the following remedia
 ## What I learned
 
 This project shows that a compromised account can be used to create a new application identity and assign permissions to maintain access, and removing it is not enough if these access paths are not also removed.
+
+</br>
+</br>
+
+<sub>[⬆️ Back to Top](#top)</sub>
