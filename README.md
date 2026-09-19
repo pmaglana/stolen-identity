@@ -1,12 +1,5 @@
 <img width="1976" height="510" alt="banner-stolenidentity2" src="https://github.com/user-attachments/assets/ba04b2b4-1764-4069-b522-2c973954060c" />
 
-<!--- 
-## Overview  
-An employee got phished through a convincing fake login page, resulting in their password being compromised and MFA was successfully completed, the employee remained the Owner of an enterprise app. The objective is to identify, investigate, and recover evidence related to the incident.
-
-## Objective
-To reconstruct the attacker’s actions step by step using only the access and information available in Azure. The investigation will trace the evidence left behind on the app registration identified by the security team as having been compromised.  --->
-
 ## Scenario
 Reconstructed a five-stage OAuth consent-phishing kill chain in a live Azure tenant through forensic analysis of two linked app registrations.
 
