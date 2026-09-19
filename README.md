@@ -75,6 +75,5 @@ Based on the findings identified during the investigation, the following remedia
 This project shows that a compromised account can be used to create a new application identity and assign permissions to maintain access, and removing it is not enough if these access paths are not also removed.
 
 </br>
-</br>
 
 <sub>[⬆️ Back to Top](#top)</sub>
